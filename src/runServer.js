@@ -1,5 +1,5 @@
 const http = require("http");
-const puppeteer = require("puppeteer-core");
+const puppeteer = require("puppeteer");
 
 const takeScreenshot = require("./takeScreenshot.js");
 const config = require("./config.js");
