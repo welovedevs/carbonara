@@ -11,6 +11,7 @@ async function runServer() {
   const browser = await puppeteer.launch({
     args: ['--no-sandbox','--disable-setuid-sandbox']
   });
+  console.log('Browser started');
 
   const server = http.createServer((req, res) => {
     const url = new URL(req.url, base);
