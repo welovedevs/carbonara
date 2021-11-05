@@ -7,13 +7,9 @@ const config = require("./config.js");
 async function runServer() {
   const base = `${config.server.protocol}://${config.server.host}:${config.server.port}`;
 
+  console.log(`Starting browser. Base : ${base}`);
   const browser = await puppeteer.launch({
-    args: [
-      "--disable-dev-shm-usage",
-      "--no-sandbox",
-      "--disable-setuid-sandbox",
-    ],
-    executablePath: "/usr/bin/chromium-browser",
+    args: ['--no-sandbox','--disable-setuid-sandbox']
   });
 
   const server = http.createServer((req, res) => {
